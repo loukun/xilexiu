@@ -1,0 +1,40 @@
+<!--挑选模板-->
+<view>
+  <!-- <view class='head'>
+    <view style='display: flex; align-items: center;'>
+      <view style='width: 20rpx;'></view>
+      <image class='userinfo-avatar' bindtap="bindViewTap" src="{{userInfo.avatarUrl?userInfo.avatarUrl:reserveImg}}"></image>
+      <text style='color: #576B95;' bindtap="login">{{userInfo.nickName == null ? '登录':userInfo.nickName}}</text>
+    </view>
+    <view>
+    <text style='color: #576B95;' class='cell' bindtap="goHome">了解喜乐秀</text>
+    </view>
+  </view> -->
+  <swiper style="height:1106rpx;" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+    bindchange="durationChange">
+    <block wx:for="{{templates}}" wx:key="index">
+      <swiper-item>
+          <view class='area-style' style='margin:10px auto;width: 675rpx; height: 928rpx'>
+            <view class="inner-border" style='width: 595rpx; height: 728rpx;'>
+                <image style="margin:20rpx 20rpx 20rpx 20rpx;width: 555rpx; height:688rpx; position:relative"
+                  mode="scaleToFill"
+                  src="{{item.imageUrl}}">
+                </image>
+            </view>
+            <view style='margin-top:808rpx;margin-left:40rpx;position:absolute;'> 
+              <text class='text-title'>名称：{{item.name}}\t\n</text>
+              <text class='text-type'>适用：{{item.apply}}</text>
+              <text class='text-number' style='margin-left:275rpx;'>{{item.number}}</text>
+              <text class='text-unit'> 张</text>
+            </view>
+          </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+ <view style='display: inline-block; margin-left:40rpx; margin-top: 0rpx;  position:absolute; bottom: 200rpx;'>
+    <view wx:for="{{templates}}" wx:key="idx" class="{{item.idx == current ? 'point-selected' : 'point-unselect'}}" 
+      style="display: inline-block; margin-top: 0px; margin-right:10px;line-height:0px;">
+    </view> 
+</view>
+<button bindtap="show" class='button-orange-center' style='bottom: 60rpx;'>进入</button>

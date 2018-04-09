@@ -1,0 +1,57 @@
+<!--首页-->
+<!-- 头部 -->
+<view class='cell-style' style='background: #FFE81F; margin-top: 20rpx;' bindtap='order'> 
+  <view style='display: flex; line-height: 160rpx;'>
+    <view class='circle1' style='margin-left: 50rpx; margin-top: 15rpx;'>
+      <view class='circle2' style='margin-left: 7rpx; margin-top: 7rpx;'>
+        <image style='margin-left: -4rpx; margin-top: -4rpx;'
+          class='userinfo-avatar'
+          bindtap="bindViewTap"
+          src="{{userInfo.avatarUrl?userInfo.avatarUrl:reserveImg}}">
+        </image>
+      </view>
+    </view>
+    <view style='margin-top: 30rpx; margin-left: 20rpx; font-size: 30rpx;' bindtap="login">
+      {{userInfo.nickName == null ? '登录':userInfo.nickName}}
+    </view>
+  </view>
+</view>
+<!-- 视频 -->
+<video id='myVideo'
+  src='{{videoSrc}}'
+  autoplay='{{autoplay}}'
+  loop='loop'
+  direction='{{direction}}'
+  objectFit='cover'
+  initial-time='{{initialTime}}'
+  bindplay="fullScreen"
+  show-center-play-btn='{{showCenter}}'
+  bindfullscreenchange='screenChange'
+  class='video-style'>
+  <cover-view class="controls" style='display: {{coverShow}}'>
+    <cover-view class="play" bindtap="play">
+      <cover-image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />
+    </cover-view>
+  </cover-view>  
+</video>  
+<view class='cell-style' style='background: #00C1FC; margin-top: 650rpx;' bindtap='understand'>
+   <view style='display: flex; flex-direction: row; justify-content:space-around;'>
+     <image style='margin-left: 50rpx; width:100rpx; height: 100prx;' src=''></image>
+    <view style='line-height: 160rpx; width: 300rpx;font-size:60rpx; color:#FFFFFF;'>了解喜乐秀</view>
+    <view style='line-height: 160rpx; width: 240rpx;text-align: center;color:#FFFFFF;'>Understand</view> 
+  </view> 
+</view>
+<view class='cell-style' style='background: #B7ED35; margin-top: 830rpx;' bindtap='make'>
+   <view style='display: flex; flex-direction: row; justify-content:space-around;'>
+     <image style='margin-left: 50rpx; width:100rpx; height: 100prx;' src=''></image>
+    <view style='line-height: 160rpx; width: 240rpx;font-size:60rpx; color:#FFFFFF;'>立即制作</view>
+    <view style='line-height: 160rpx; width: 240rpx; text-align: center;color:#FFFFFF;'>Make</view> 
+  </view> 
+</view>
+<view class='cell-style' style='background: #FF8436; margin-top: 1010rpx;' bindtap='account'>
+   <view style='display: flex; flex-direction: row; justify-content:space-around;'>
+     <image style='margin-left: 50rpx; width:100rpx; height: 100prx;' src=''></image>
+    <view style='line-height: 160rpx; width: 240rpx;font-size:60rpx; color:#FFFFFF;'>我的账户</view>
+    <view style='line-height: 160rpx; width: 240rpx;text-align: center;color:#FFFFFF;'>Account</view> 
+  </view> 
+</view>  

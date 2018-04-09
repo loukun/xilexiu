@@ -1,0 +1,33 @@
+<!--pages/template_show/index.wxml-->
+<view>
+  <video id="myVideo"
+    src="{{videoSrc}}" 
+    controls="{{controls}}"
+    autoplay="{{autoplay}}" 
+    loop="loop" 
+    direction="{{direction}}" 
+    objectFit="{{objectFit}}"
+    initial-time="{{initialTime}}"
+    bindplay="fullScreen"
+    style="width: 100%;height:398rpx;" >
+  </video>
+  <view class='title' style='padding: 10px;font-weight: 600'>
+    <text>秀本内页</text>
+  </view>
+  <view style='display:flex; flex-wrap: wrap;'>
+    <view wx:for="{{imgUrls}}" style='width:355rpx; margin:10rpx auto;'>
+      <view style='background: #FFFFFF;  display:flex;' class='area-style'>
+        <block style="margin:20rpx auto;">
+        <image style="margin:20rpx auto; width:335rpx;"
+          mode="scaleToFill"
+          src="{{item}}"
+          data-index='{{index}}'
+          bindtap='previewImg'>
+        </image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <button bindtap="uploadPhoto" class='button-orange-center'>我要做一套</button>
+</view>
+  

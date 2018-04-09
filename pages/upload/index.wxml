@@ -1,0 +1,37 @@
+<!--pages/upload/index.wxml-->
+<view style='background: #F3F3F3; height: {{windowHeight}}px;'>
+  <view style='display:flex; justify-content: flex-end;'>
+    <view class='text-number' style='width: {{windowWidth * 0.25}}px; height: {{windowHeight * 0.05}}px; justify-content: center; display: flex;'>
+      <text style='padding-right: 0px;'>{{tempFilePaths.length}} / {{totalCount}} 张</text>
+    </view>
+  </view>
+  <view style='padding-top: 5px; display: flex; flex-wrap: wrap; justify-content: flex-start; padding-left:5px;'>
+    <view wx:for='{{tempFilePaths}}' style='width:{{windowWidth/3 - 5}}px; margin-right:3px; position: relative'>
+      <view data-index='{{index}}' bindtap='delPic' style='z-index: 100; position:absolute; bottom:8px; right:0px; width: 30px; height: 30px;                  background: #E64340; border-radius: 10px; display:flex; align-items: center; justify-content: center;'>
+        <view style='color: #FCFCFC; font-size: 30px; font-weight: bold; border-radius: 4px'>×</view>
+      </view>
+      <image style='width: {{windowWidth/3 - 5}}px; height: {{windowWidth/3 - 5}}px; border-radius: 8px;'
+        mode='scaleToFill'
+        src='{{item}}'
+        data-index='{{index}}'>
+      </image>
+    </view>
+  </view>
+  <view style='display: flex; position: fixed; margin:auto;left:0; right:0; bottom: 20px; z-index: 100; justify-content: space-around;'>
+      <view style='margin:0 auto;' wx:if='{{tempFilePaths.length == 0}}'>
+        <button bindtap='add' style='border-radius: 20%; width: 160px; height: 40px;'>
+          <text style='vertical-align:middle;font-size:15px;'>上传照片</text>
+        </button>
+      </view>
+      <view style='margin:0 auto;' wx:if='{{tempFilePaths.length > 0}}'>
+        <button bindtap='add' style='border-radius: 20%; width: 160px; height: 40px;'>
+          <text style='vertical-align:middle;font-size:15px;'>继续上传</text>
+        </button>
+      </view>
+      <view style='margin:0 auto;' wx:if='{{tempFilePaths.length > 0}}'>
+        <button bindtap='next' style='border-radius: 20%; width: 160px; height: 40px;'>
+          <text style='vertical-align:middle;font-size:15px;'>下一步</text>
+        </button>
+      </view>
+    </view>
+</view>

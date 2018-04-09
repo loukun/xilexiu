@@ -1,0 +1,83 @@
+/* pages/account/index.wxss */
+/* 右侧红色标签样式 */
+.tag {
+  background: #DE403B;
+  border-radius: 100rpx 0rpx 0rpx 100rpx;
+  margin-top: -60rpx;
+  position:fixed;
+  width: 200rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.tab-number {
+  padding-right: 0px;
+  font-size: 55rpx;
+  margin-left: 20rpx;
+  color: #FCE287;
+}
+.cell-style{
+  background:rgba(255,255,255,1);
+  border-radius: 10rpx;
+  box-shadow:10px 10px 20px rgba(136,136,136,0.15);
+  width: 710rpx;
+  margin-right: 10rpx;
+}
+.tab-head{
+  height: 100rpx;
+  width: 100%;
+  box-sizing:border-box;
+  overflow: hidden;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 99;
+  margin-top: 30rpx;
+  background-color: #fff;
+  color: #888888;
+  /* border-bottom: 1px solid #F2F2F2; */
+}
+.tab-item{
+  width: 375rpx;
+  display: inline-block;
+  text-align: center;
+}
+.tab-item.active{
+  color: #fff;
+  background-color: #F7893E;
+  position: relative;
+}
+.tab-item.active:after{
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 335rpx;
+  background: #F7893E;
+  position: absolute;
+  bottom: 0;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  border-radius: 16rpx;
+}
+.item-ans {
+  width: 100%;
+  display: flex;
+  flex-grow: row no-wrap;
+  justify-content: space-between;
+  align-items:center;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 150rpx;
+}
+.avatar{width: 100rpx;height: 100rpx;position: relative;padding-right: 30rpx;}
+.avatar .img{width: 100%;height: 100%;}
+.expertInfo{font-size: 16px;flex-grow: 2;color: #484848;line-height: 1.5em;}
+.expertInfo .name{font-size: 40rpx;color:#BA5017;margin-bottom: 12rpx;}
+.tab-content {
+  margin-top: 80rpx;
+  padding-top:60rpx;
+}
+.scoll-h{height: 100%;}

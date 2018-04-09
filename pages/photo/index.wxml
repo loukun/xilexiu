@@ -1,0 +1,57 @@
+<view>
+ <movable-area style="width: {{areaWidth}}rpx; height: {{areaHeight}}rpx; background: #FFFFFF;left:{{left}}rpx; top: {{top}}rpx;">
+    <movable-view style="width: {{imageWidth}}rpx; height: {{imageHeight}}rpx; background: #FFFFFF;"
+     x="{{x}}" y="{{y}}" 
+     direction="all" 
+     inertia="{{inertia}}"
+     out-of-bounds="{{out}}">
+      <image style="width: {{imageWidth}}rpx; height:{{imageHeight}}rpx; background-color: #FFFFFF; z-index: -1;"
+        mode="scaleToFill"
+        src="{{tempFilePaths}}"
+        animation="{{animationData}}">
+      </image>
+    </movable-view>
+  </movable-area>
+  <view class="shadow" style='pointer-events:{{pointerEvents}}; border-left-width: {{left}}rpx; border-right-width: {{right}}rpx; border-top-width: {{top}}rpx; border-bottom-width: {{1206-top-areaHeight}}rpx;'>
+  </view>   
+ </view> 
+  <button bindtap="bigger" class='button' style='color: #F67014; font-size:60rpx; margin-left: 60rpx; bottom: 250rpx;'>
+    +
+  </button>
+  <button bindtap="changePhoto" class='button' style='background-image:linear-gradient(135deg, #FA8534, #E6660E); color: #fff; left: 50%;    margin-left: -100rpx; font-size:30rpx; bottom: 250rpx;'>
+    替换照片
+  </button>
+  <button bindtap="smaller" class='button' style='color: #F67014; font-size:60rpx; margin-left: 490rpx; bottom: 250rpx;'>
+    -
+  </button>
+  <button bindtap="adaptation" class='button' style='color: #F67014; font-size:30rpx; margin-left: 60rpx; bottom: 150rpx;'>
+    适配
+  </button>
+  <button bindtap="mirrorImage" class='button' style='color: #F67014; left: 50%; margin-left: -100rpx; font-size:30rpx; bottom: 150rpx;'>
+    镜像
+  </button>
+  <button bindtap="rotate" class='button' style='color: #F67014; font-size:30rpx; margin-left: 490rpx; bottom: 150rpx;'>
+    旋转
+  </button>
+  <button class='button-blue' bindtap="save">
+    保存
+  </button>
+  <canvas canvas-id="myCanvas" animation="{{animationData}}" style='z-index: -100; width: {{areaWidth}}rpx; height: {{areaHeight}}rpx;'></canvas>
+  <!-- 侧边栏 -->
+  <view class='animation' animation="{{sidebarData}}" style="top:0; height:100%;position:fixed;">
+    <view style='display: flex;'>
+      <view style='position:fixed; top: 45%; display: {{buttonDisplay}}' class='sidebar' bindtap='closeSidebar'></view>
+      <scroll-view scroll-y="true" class='animation-content'>
+        <view style='padding-top: 10rpx; display: flex; flex-wrap: wrap; justify-content: flex-start; padding-left:10rpx;'>
+          <view wx:for='{{allFilePaths}}' wx:key='index' style='width:230rpx; margin-right:6rpx; position: relative'>
+            <image style='width: 230rpx; height: 230rpx; border-radius: 16rpx;'
+              mode='scaleToFill'
+              src='{{item}}'
+              data-index='{{index}}'
+              bindtap='chooseUpImage'>
+            </image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>

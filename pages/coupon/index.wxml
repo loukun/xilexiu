@@ -1,0 +1,90 @@
+<!--优惠券-->
+<!-- 搜索 -->
+<view style='height: 80rpx;flex-direction: row; align-items:center;'>
+  <input class='search-input' placeholder="输入兑换码" />
+  <view class='search-button'>兑换</view>
+  <view class='tag' style='margin-left: 650rpx;'>
+    <view class='icon'>
+      <view class="b"></view>
+      <view class="h"></view>
+      <view class="s"></view>
+      <view class="z"></view>
+    </view>
+  </view>
+</view>
+<view class='cell-style' style='width: 710rpx; height:600rpx; margin-bottom: 40rpx;'>
+  <scroll-view scroll-x="true" class="tab-head" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTabIdx==0?'active':''}}"  data-current="0" bindtap='swichNav'>未使用</view>
+    <view class="tab-item {{currentTabIdx==1?'active':''}}" data-current="1" bindtap='swichNav'>全部</view> 
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:900rpx; padding-top:100rpx;">
+    <!-- 未使用 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="key">
+          <view class='item-coupon-active'>
+            <view style='height: 80rpx; margin-left: 40rpx; line-height: 80rpx; color: #FFCF42;'>
+              优惠券编号：12345678912345678
+            </view>
+            <view class='line-style' style='margin-left: 10rpx; margin-right: 10rpx;'></view>
+            <view style='display:flex;justify-content: space-between;align-items:flex-end;margin-top: 20rpx; '>
+              <view style='display:flex;flex-direction: row;align-items:flex-end; margin-left:20rpx;'>
+                <view style='font-size: 200rpx; color: #fff;line-height:160rpx;'>10</view>
+                <view style='color: #fff;'>元</view>
+              </view>
+              <view style='color: #FFCF42;margin-right:20rpx;'>代金券</view>
+            </view>
+            <view class='line-style' style='margin-left: 10rpx; margin-right: 10rpx; margin-top:20rpx;'></view>
+            <view style='height: 80rpx; margin-left: 40rpx; line-height: 80rpx; color: #fff;'>
+              有效期：2018.01.01 至 2018.02.01
+            </view>
+            <view class='line-style' style='margin-left: 10rpx; margin-right: 10rpx;'></view>
+            <view style='display:flex; flex-direction:row; align-items:center; margin-top: 20rpx;'>
+              <view style='margin-left: 40rpx; color: #fff;'>
+                优惠来自：
+              </view>
+              <!-- 头像 -->
+              <view class='circle2'>
+                <image
+                  style='margin-left:0rpx;margin-top:0rpx;'
+                  class='userinfo-avatar'
+                  bindtap="bindViewTap"
+                  src="http://ookzqad11.bkt.clouddn.com/avatar.png">
+                </image>
+              </view>
+              <view style='color: #fff; margin-left: 40rpx;'>宁静致远简简</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 全部 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="key">
+          <view class="item-ans">
+            <view class="userinfo-avatar">
+              <image class="img"
+              src="http://ookzqad11.bkt.clouddn.com/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">欢颜</view>
+              <view style='display: flex; justify-content: space-between;'>
+                <view>01月01日 12:34</view>
+                <view>使用了优惠</view>
+              </view>
+              <view style='display: flex; justify-content: space-between;'>
+                <view>亲友获得现金红包</view>
+                <view style='color: #EA4D4A;'>10元</view>
+              </view>
+              <view style='display: flex; justify-content: space-between;'>
+                <view>你获得现金红包</view>
+                <view style='color: #EA4D4A;'>9元</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

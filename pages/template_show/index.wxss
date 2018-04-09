@@ -1,0 +1,11 @@
+/* pages/template_show/index.wxss */
+.title{
+  color:rgba(53,53,53,1);
+  line-height:0px;
+  text-align: center;
+}
+.area-style{
+  background:rgba(255,255,255,1);
+  /* border-radius: 20px; */
+  box-shadow:10px 10px 25px rgba(136,136,136,0.15)
+}

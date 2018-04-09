@@ -1,0 +1,49 @@
+/* pages/order_list/index.wxss */
+.cell-style{
+  background:rgba(255,255,255,1);
+  border-radius: 20rpx;
+  box-shadow:10px 10px 20px rgba(136,136,136,0.15);
+  width: 710rpx;
+  height:540rpx;
+  margin-left: 20rpx; 
+  margin-top: 20rpx;
+}
+.cell:after {
+    content: " ";
+    display: inline-block;
+    height: 24rpx;
+    width: 24rpx;
+    border-width: 4rpx 4rpx 0 0; 
+    border-color: #576B95;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: relative;
+    margin-top: -8rpx;
+    right: 4rpx;
+    margin-right: 20rpx;
+}
+.inner-border {
+  border:1px solid #F1F1F1;
+  margin:10rpx 10rpx 10rpx 20rpx;
+}
+.button {
+  z-index:100;
+  border-radius: 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-shadow: 0 20rpx 20rpx -10rpx #FA8534; 
+  color: #FFF;
+  font-size:40rpx;
+}
+.color-green {
+  background-image:linear-gradient(135deg, #09BB07, #09BB07); 
+  box-shadow: 0 20rpx 20rpx -10rpx #09BB07;
+}
+.color-orange {
+  background-image:linear-gradient(135deg, #FA8534, #E6660E); 
+  box-shadow: 0 20rpx 20rpx -10rpx #FA8534;
+}
+.color-red {
+  background-image:linear-gradient(135deg, #E64340, #E64340); 
+  box-shadow: 0 20rpx 20rpx -10rpx #E64340;
+}

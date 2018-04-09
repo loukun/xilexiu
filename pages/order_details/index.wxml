@@ -1,0 +1,57 @@
+<!--订单详情画面-->
+<view>
+  <view class='cell-style'>
+    <view style='line-height: 100rpx; display: flex; flex-direction: row; justify-content: space-between; align-items: center;'>
+      <view style='margin-left: 20rpx; color: #898989'>订单编号:{{order.order_id}}</view>
+    </view>
+    <view class='line-style' style='margin-left: 20rpx;'></view>
+    <view style='display: flex; flex-direction:row;'>
+      <view style='display: flex; flex-direction: column;'>
+        <view class="inner-border" style='width: 240rpx; height: 300rpx;'>
+            <image style="margin:10rpx 10rpx 10rpx 10rpx;width: 220rpx; height:280rpx; position:relative"
+              mode="scaleToFill"
+              src="{{order.cover_src}}">
+            </image>
+        </view>
+        <text style='margin-left: 60rpx; color: {{color}}'>{{status_name}}</text>
+      </view>
+      <view style='display: flex; flex-direction: column;'>
+        <view style='margin-left: 20rpx;'>
+          <view style='color: #F7893E; font-size: 60rpx;'>喜乐秀</view>
+          <view style='margin-top: 30rpx;'>
+            <text space='emsp'>编  号：{{order.order_id}}\t\n</text>
+            <text space='emsp'>主  题：{{order.subject}}\t\n</text>
+            <text>装订工艺：{{order.technics}}\t\n</text>
+            <text space='emsp'>纸  张：{{order.paper}}\t\n</text>
+            <text space='emsp'>页  数：{{order.paper_number}}</text>
+          </view>
+        </view>
+        <view class='line-style' style='margin-top: 20rpx;'></view>
+        <view style='margin-left: 20rpx; margin-top: 20rpx;'>
+          <text>商品数量：{{order.qty}}本\t\n</text>
+          <text>活动优惠：-{{order.preferential}}元\t\n</text>
+          <text>优惠券抵扣：-{{order.coupon}}元\t\n</text>
+          <text>余额抵扣：-{{order.balance}}元\t\n</text>
+          <text>金额合计：{{order.total}}元</text>
+        </view>
+        <view class='line-style' style='margin-top: 20rpx;'></view>
+        <view style='margin-left: 20rpx; margin-top: 20rpx;'>
+          <text>快递状态：{{order.logistics_status}}\t\n</text>
+          <text>承运快递：{{order.logistics_name}}\t\n</text>
+          <text>快递单号：{{order.logistics_code? 'order.logistics_code' : '无'}}\t\n</text>
+        </view>
+        <view class='line-style' style='margin-top: 20rpx;'></view>
+        <view style='margin-left: 20rpx; margin-top: 20rpx;'>
+          <text>收货人：{{order.logistics_status}}\t\n</text>
+          <text>电话：{{order.logistics_name}}\t\n</text>
+          <text>收货地址：{{order.consignee_address}}\t\n</text>
+        </view>
+        <view class='line-style' style='margin-top: 20rpx;'></view>
+        <view style='margin-left: 20rpx; margin-top: 20rpx;'>
+          <text>创建时间：{{order.created_at}}\t\n</text>
+          <text>支付时间：{{order.pay_time}}\t\n</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

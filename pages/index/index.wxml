@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <button class="weui-btn" type="primary" bindtap="bindMap"> 获取当前地址 </button>
+  <button class="weui-btn" type="primary" bindtap="selectPhoto"> 照片选择 </button>
+  <button class="weui-btn" type="primary" bindtap="selectPicture"> 测试画面 </button>
+</view>

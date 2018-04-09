@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/templet/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/map/map",
+    "pages/photo/index",
+    "pages/template_show/index",
+    "pages/upload/index",
+    "pages/test/index",
+    "pages/account/index",
+    "pages/order_list/index",
+    "pages/test2/index",
+    "pages/order_details/index",
+    "pages/order/index",
+    "pages/record/index",
+    "pages/coupon/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FDFDFD",
+    "navigationBarTitleText": "喜乐秀",
+    "navigationBarTextStyle": "black"
+  }
+}

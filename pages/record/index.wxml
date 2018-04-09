@@ -1,0 +1,25 @@
+<button class='button-upload' bindtap='stop'>上传背景音乐</button>
+<!-- <button style='margin-top: 50rpx; position:fixed;' bindtap='play'>播放</button> -->
+<view class='suggest' style='{{active? "":"display: none;"}} margin-top: 300rpx; line-height:40px'>
+  <view>作品名称</view>
+  <view style='font-size: 50rpx;'>{{title}}</view>
+  <view>{{time}}</view>
+</view>
+ <view class='song-lyric'>
+      <view wx:for="{{lrcList}}" wx:key="lrcText" class="song-lyric-con {{item.time <= ct && item.endtime > ct ? 'select' : ''}} {{ item.time < ct+3 && item.endtime > ct-2 ? 'ready' : '' }}">
+        <view class='backCharacters'> {{ item.lrc }}</view>
+         <text class='hid' style='{{style}}'>{{ item.lrc }}</text> 
+      </view>
+    </view> 
+  <!-- <view class="song-lyric"> -->
+  <!-- <view>
+    <view wx:for="{{lrcList}}" wx:key="lrcText" class="song-lyric-con {{item.time <= ct && item.endtime > ct ? 'select' : ''}} {{ item.time < ct+3 && item.endtime > ct-2 ? 'ready' : '' }}" >
+      <view class='backCharacters' style='color: #fff; {{style}}'> {{ item.lrc }} </view>
+      <view class='hid' style='{{style}}'>{{ item.lrc }}</view> 
+    </view>
+  </view> -->
+<view class='suggest' style='bottom: 280rpx;'>建议使用</view>
+<view class='suggest' style='bottom: 230rpx;'>耳机上的麦克风录制</view>
+<!-- <view class='backCharacters' style='color: #fff'>你是我的小呀小苹果</view>
+<view class='hid' style='{{style}}'>你是我的小呀小苹果</view> -->
+<button class='button-record' bindtap='{{method}}'>{{startOrStop}}</button>

@@ -1,0 +1,21 @@
+/* pages/order_details/index.wxss */
+.cell-style{
+  background:rgba(255,255,255,1);
+  border-radius: 20rpx;
+  box-shadow:10px 10px 20px rgba(136,136,136,0.15);
+  width: 710rpx;
+  margin-left: 20rpx; 
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.inner-border {
+  border:1px solid #F1F1F1;
+  margin:10rpx 10rpx 10rpx 20rpx;
+}
+.line-style {
+  height:1px;
+  background:#B2B2B2;
+  overflow:hidden;
+  margin-right: 20rpx;
+  opacity:0.6;
+}

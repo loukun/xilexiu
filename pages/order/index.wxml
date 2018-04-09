@@ -1,0 +1,108 @@
+<!--下单页面-->
+<view>
+  <view class='cell-style'>
+    <view class='flex-start' style='justify-content: space-between;'>
+      <view style='margin-left: 20rpx;'>印刷数量</view>
+      <!-- 主容器 -->  
+      <view class="stepper">  
+        <!-- 减号 -->  
+        <text bindtap="bindMinus">-</text>  
+        <!-- 数值 -->  
+        <input type="number" value="{{qty}}" maxlength='4'/>  
+        <!-- 加号 -->  
+        <text bindtap="bindPlus">+</text>  
+      </view>  
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start' style='justify-content: space-between;'>
+      <view style='margin-left: 20rpx;'>包邮<text style='color: #B2B2B2;'>（部分地区除外）</text></view>
+      <text style='color: #B2B2B2;' class='cell' bindtap="illustrate">了解更多 </text>
+    </view>
+  </view>
+  <view class='cell-style'>
+    <view class='flex-start'>
+      <view style='margin-left: 20rpx;'>收货人</view>
+      <input style='margin-left: 20rpx;' placeholder='姓名' value='' bindfocus='chooseAddress' />
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start'>
+      <view style='margin-left: 20rpx;'>联系电话</view>
+      <input style='margin-left: 20rpx;' placeholder='手机或固话' value='' bindfocus='chooseAddress'/>
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start' style='justify-content: space-between;'>
+      <view style='margin-left: 20rpx;'>选择地址</view>
+      <input placeholder='地址信息' disabled='true' value=''/>
+      <view style='color: #B2B2B2;' class='cell' bindtap="chooseAddress"> </view>
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start'>
+      <view style='margin-left: 20rpx;'>详细地址</view>
+      <input style='margin-left: 20rpx; height: 300prx;' placeholder='街道门牌信息' value='' bindfocus='chooseAddress' />
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start'>
+      <view style='margin-left: 20rpx;'>备注</view>
+      <input style='margin-left: 20rpx;' value=''/>
+    </view>
+  </view>
+  <view class='cell-style'>
+    <view class='flex-start' style='justify-content: space-between;'>
+      <view style='margin-left: 20rpx;'>使用优惠券</view>
+      <view style='color: #F46C0E;' class='cell orange' bindtap="couponShow"> {{coupon?coupon+'元优惠券':'无'}}</view>
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start' style='justify-content: space-between;'>
+      <view style='margin-left: 20rpx;'>使用账户余额</view>
+      <view style='color: #F46C0E;' class='cell orange' bindtap="balanceShow"> {{balance?balance+'秀币':'无'}}</view>
+    </view>
+  </view>
+  <view class='cell-style' style='margin-bottom: 180rpx;'>
+    <view class='flex-start' style='justify-content: space-between; line-height: 70rpx;'>
+      <view style='margin-left: 20rpx;'>运费金额：</view>
+      <view style='margin-right: 20rpx;'>0.00元</view>
+    </view>
+    <view class='flex-start' style='justify-content: space-between; line-height: 70rpx;'>
+      <view style='margin-left: 20rpx;'>优惠券抵扣：</view>
+      <view style='margin-right: 20rpx;'>{{coupon?-coupon:'0.00'}}元</view>
+    </view>
+    <view class='flex-start' style='justify-content: space-between; line-height: 70rpx;'>
+      <view style='margin-left: 20rpx;'>账户余额抵扣：</view>
+      <view style='margin-right: 20rpx;'>{{balance?-balance:'0.00'}}元</view>
+    </view>
+    <view class='line-style' style='margin-left: 20rpx; margin-top: 40rpx; margin-right: 20rpx;'></view>
+    <view class='flex-start' style='justify-content: space-between;'>
+      <view style='margin-left: 20rpx;'>实付款：</view>
+      <view style='color: #F46C0E; margin-right: 20rpx;'>{{total?total:'0.00'}}元</view>
+    </view>
+  </view>
+  <button bindtap="goBack" class='button color-blue' style='margin-left: 20rpx;'>找人代付</button>
+  <button bindtap="doNow" class='button color-orange' style='margin-left: 470rpx;'>确认支付</button>
+  <!-- 优惠券 -->
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog-show' : '' }}" catchtouchmove='preventD'>
+    <view class="zan-dialog__mask" bindtap="couponShow" catchtouchmove='preventD'/>
+    <scroll-view  class="zan-dialog__container" style="height: 900rpx;">
+      <view style="margin-left: 40rpx;margin-top: 40rpx; height: 80rpx; font-weight:600; font-size: 40rpx;" bindtap="couponShow">×</view>
+      <view class='line-style'></view>
+      <radio-group bindchange="radioChange">
+        <view wx:for="{{couponList}}" wx:key='index'>
+          <view style='display: flex; justify-content: space-between; margin-left: 40rpx; margin-top: 20rpx;'>
+            <view>
+              <view>{{item.price}}元优惠券</view>
+              <view style='font-size: 30rpx; color: #B2B2B2;'>有效期截止：{{item.date}}</view>
+            </view>
+            <view><radio value="{{item.id}}" checked="{{item.checked}}" color='#F46C0E'/></view>
+          </view>
+          <view class='line-style' style='margin-top: 150rpx;'></view>
+        </view>
+        <view style='display: flex; justify-content: space-between; margin-left: 40rpx; margin-top: 20rpx;'>
+          <view>
+            <view>不适用优惠</view>
+          </view>
+          <view><radio value="0" color='#F46C0E'/></view>
+        </view>
+        <view class='line-style' style='margin-top: 150rpx;'></view>
+      </radio-group>
+    </scroll-view>
+  </view>
+</view>

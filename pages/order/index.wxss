@@ -1,0 +1,139 @@
+/* pages/order/index.wxss */
+
+.cell:after {
+    content: " ";
+    display: inline-block;
+    height: 24rpx;
+    width: 24rpx;
+    border-width: 4rpx 4rpx 0 0; 
+    border-color: #B2B2B2;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: relative;
+    margin-top: -8rpx;
+    right: 4rpx;
+    margin-right: 20rpx;
+}
+.orange:after {
+    content: " ";
+    display: inline-block;
+    height: 24rpx;
+    width: 24rpx;
+    border-width: 4rpx 4rpx 0 0; 
+    border-color: #F46C0E;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: relative;
+    margin-top: -8rpx;
+    right: 4rpx;
+    margin-right: 20rpx;
+}
+.stepper {  
+    width: 310rpx;
+    height: 80rpx;
+    /*给主容器设一个边框*/
+    border: 1px solid #F46C0E;
+    border-radius: 40rpx;
+    margin-right: 20rpx;
+    background-color: #F46C0E;
+}
+  
+/*加号和减号*/  
+.stepper text {
+    width: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    float: left;
+    font-size: 50rpx;
+    color: #FFF;
+}  
+  
+/*数值*/  
+.stepper input {  
+    width: 140rpx;
+    height: 80rpx;
+    float: left;
+    text-align: center;
+    font-size: 40rpx;
+    /*给中间的input设置左右边框即可*/
+    border-left: 1px solid #F46C0E;
+    border-right: 1px solid #F46C0E;
+    background-color: #FFF;
+}
+.flex-start {
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.button {
+  position:fixed;
+  bottom: 50rpx;
+  z-index:100;
+  border-radius: 50rpx;
+  width: 260rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:40rpx;
+  padding:0;
+}
+.color-orange {
+  background-image:linear-gradient(135deg, #FA8534, #E6660E);
+  box-shadow: 0 20rpx 20rpx -10rpx #FA8534; 
+  color: #fff;
+}
+.color-blue {
+  background-image:linear-gradient(135deg, #1F8AFF, #197CE9);
+  box-shadow: 0 20rpx 20rpx -10rpx #1B88FF; 
+  color: #fff;
+}
+.zan-dialog__mask {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  /* overflow:hidden; */
+}
+
+.zan-dialog__container {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 900rpx;
+  background: white;
+  transform: translateY(150%);
+  /* transition: all 0.4s ease; */
+  z-index: 999;
+  /* overflow: hidden; */
+}
+
+.zan-dialog-show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog-show .zan-dialog__mask {
+  display: block;
+}
+
+
+.coupon_receive_wrapper{
+  display:none;
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+  z-index:11;
+  transition: all 1s ease;
+}
+.coupon_receive_wrapper.active{
+  display:block;
+}

@@ -1,0 +1,12 @@
+/* pages/upload/index.wxss */
+.text-number{
+  background: #E64340;
+  border-radius: 15px 0px 0px 15px;
+  opacity: 0.8;
+  /* box-shadow:5px 5px 5px 5px #E64340; */
+  margin-top: 5px;
+}
+.text-number text{
+  color: #F3F3F3;
+  font-size: 17px;
+}

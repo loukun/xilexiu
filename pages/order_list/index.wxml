@@ -1,0 +1,38 @@
+<!--订单一览-->
+<view>
+  <view class='cell-style' wx:for='{{orderList}}' wx:key='index'>
+    <view style='line-height: 100rpx; display: flex; flex-direction: row; justify-content: space-between; align-items: center;'>
+      <view style='margin-left: 20rpx; color: #898989'>订单编号:{{item.order_id}}</view>
+      <text style='color: #576B95;' class='cell' bindtap="detail">查看详情 </text>
+    </view>
+    <view style='height:1px; background:#B2B2B2; overflow:hidden; margin-left: 20rpx; margin-right: 20rpx; opacity:0.6;'></view>
+    <view style='display: flex; flex-direction:row; justify-content: '>
+      <view class="inner-border" style='width: 240rpx; height: 300rpx;'>
+          <image style="margin:10rpx 10rpx 10rpx 10rpx;width: 220rpx; height:280rpx; position:relative"
+            mode="scaleToFill"
+            src="{{item.cover_src}}">
+          </image>
+      </view>
+      <view style='margin-top: 20rpx; margin-left: 20rpx;'>
+        <view>创建日期：</view>
+        <view>2018年1月1日</view>
+        <view>12时12分12秒</view>
+        <view wx:if='{{false}}' style='color:#F56C0E; margin-top: 20rpx;'>等待支付</view>
+        <view wx:if='{{false}}' style='color:#F56C0E; margin-top: 20rpx;'>等待辅助支付</view>
+        <view wx:if='{{false}}' style='color:#E64340; margin-top: 20rpx;'>缺少照片</view>
+        <view wx:if='{{false}}' style='color:#09BB07; margin-top: 20rpx;'>正在印刷</view>
+        <view wx:if='{{false}}' style='color:#09BB07; margin-top: 20rpx;'>已发送</view>
+        <view style='color:#09BB07; margin-top: 20rpx;'>已送到</view>
+        <view class='cell' style='color:#576B95; margin-top: 20rpx; font-size:35rpx;' bindtap='logistics'>查看物流</view>
+      </view>
+    </view>
+    <view style='height:1px; background:#B2B2B2; overflow:hidden; margin-left: 20rpx; margin-right: 20rpx; opacity:0.6;'></view>
+    <view style='display: flex; justify-content: space-around;'>
+      <button class='button color-green' style='margin-top: 10rpx; margin-left: 20rpx; width: 180rpx;'>修改</button>
+      <button wx:if='{{false}}' class='button color-orange' style='margin-top: 10rpx; margin-right: 20rpx; width: 240rpx;'>立即支付</button>
+      <button wx:if='{{false}}' class='button color-orange' style='margin-top: 10rpx; margin-right: 20rpx; width: 300rpx;'>取消辅助支付</button>
+      <button wx:if='{{false}}' class='button color-red' style='margin-top: 10rpx; margin-right: 20rpx; width: 240rpx;'>添加照片</button>
+      <button wx:if='true' class='button color-green' style='margin-top: 10rpx; margin-right: 20rpx; width: 400rpx;'>相同照片 再印一本</button>
+    </view>
+  </view>
+</view>
